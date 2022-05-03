@@ -1,6 +1,6 @@
 import axios from "axios";
 import {getHostUUID, getToken} from "./utils";
-import {logout} from "../routes/Login";
+import {logout} from "../components/Login";
 import {message, notification} from "antd";
 import {CloseCircleOutlined, SmileOutlined} from "@ant-design/icons";
 
@@ -9,7 +9,7 @@ const dstRunApi = axios.create({});
 
 const baseRequest = [
     (config) => {
-        config.baseURL = '/neutron_star/';
+        config.baseURL = '/ns_server/';
         let token = getToken();
         if (token) {
             config.headers['authorization'] = token;

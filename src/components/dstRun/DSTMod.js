@@ -379,10 +379,6 @@ function UpdateModDrawer(props) {
                     <Descriptions.Item label="名称">{mod.name}</Descriptions.Item>
                     <Descriptions.Item label="别名">
                         <Input
-                            bordered={false}
-                            style={{
-                                padding: 0,
-                            }}
                             value={mod.remark}
                             onChange={(e) => {
                                 setMod({
@@ -397,9 +393,7 @@ function UpdateModDrawer(props) {
                     <Descriptions.Item label="配置">
                         <TextArea
                             rows={20}
-                            bordered={false}
                             style={{
-                                padding: 0,
                                 resize: "none",
                             }}
                             value={mod.config}

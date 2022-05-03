@@ -1,19 +1,16 @@
 import React, {lazy} from 'react';
 import {BrowserRouter as Router, Navigate, Route, Routes} from 'react-router-dom';
 import './App.css';
-import {RequireAuth} from "./routes/Login";
-
+import {RequireAuth} from "./components/Login";
 import DSTControl from "./components/dstRun/DSTControl";
 import DSTCluster from "./components/dstRun/DSTCluster";
-import DSTTemplate from "./components/dstRun/DSTTemplate";
 import DSTRoom from "./components/dstRun/DSTRoom";
-import DSTMaster from "./components/dstRun/DSTMaster";
-import DSTCaves from "./components/dstRun/DSTCaves";
+import DSTWorld from "./components/dstRun/DSTWorld";
 import DSTMod from "./components/dstRun/DSTMod";
 
-const Home = lazy(() => import('./routes/Home'));
-const Login = lazy(() => import('./routes/Login'));
 
+const Home = lazy(() => import('./components/MainPage'));
+const Login = lazy(() => import('./components/Login'));
 
 
 export default function App() {
@@ -34,14 +31,9 @@ export default function App() {
                             <DSTRoom/>
                         </RequireAuth>
                     }/>
-                    <Route path="/dst/world/master" element={
+                    <Route path="/dst/world" element={
                         <RequireAuth>
-                            <DSTMaster/>
-                        </RequireAuth>
-                    }/>
-                    <Route path="/dst/world/caves" element={
-                        <RequireAuth>
-                            <DSTCaves/>
+                            <DSTWorld/>
                         </RequireAuth>
                     }/>
                     <Route path="/dst/mod" element={
@@ -52,11 +44,6 @@ export default function App() {
                     <Route path="/dst/cluster" element={
                         <RequireAuth>
                             <DSTCluster/>
-                        </RequireAuth>
-                    }/>
-                    <Route path="/dst/template" element={
-                        <RequireAuth>
-                            <DSTTemplate/>
                         </RequireAuth>
                     }/>
                 </Route>
