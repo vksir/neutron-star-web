@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Navigate, Route, Routes} from 'react-router-dom
 import './App.css';
 import {RequireAuth} from "./components/Login";
 import DSTControl from "./components/dstRun/DSTControl";
-import DSTCluster from "./components/dstRun/DSTCluster";
+import DSTCluster from "./components/dstRun/dstCluster/DSTCluster";
 import DSTRoom from "./components/dstRun/DSTRoom";
 import DSTWorld from "./components/dstRun/DSTWorld";
 import DSTMod from "./components/dstRun/DSTMod";

@@ -241,6 +241,7 @@ function ModTable(props) {
                     ]}
                     onFilter={(value, record) => record.enable.toString() === value}
                     sorter={(a, b) => -a.enable + b.enable}
+                    defaultSortOrder="ascend"
                     render={(text, record) => (
                         <Switch
                             checkedChildren={<CheckOutlined/>}
